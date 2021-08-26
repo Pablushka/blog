@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # Obtiene el listado de articulos
   get "/articles", to: "articles#index"
 
-  get "/authors" , to: "articles#authors"
+  get "/authors", to: "articles#authors"
+
 
 end
