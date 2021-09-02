@@ -20,7 +20,8 @@
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"ms-vsliveshare.vsliveshare",
-		"eamodio.gitlens"
+		"eamodio.gitlens",
+		"alexcvzz.vscode-sqlite"
 	]
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
