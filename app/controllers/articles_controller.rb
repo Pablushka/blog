@@ -7,9 +7,7 @@ class ArticlesController < ApplicationController
   def authors
     @authors_list = ["Borges","Tolkien", "Biki" , "Gonza"]
   end
-
   def authors
     @authors_list = ["Borges", "Tolkien", "Biki", "Gonza"]
-  end
-
+  end  
 end
