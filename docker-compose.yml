@@ -34,5 +34,7 @@ services:
       - ./:/rails_tutorial
       - type: tmpfs
         target: /tmp_sprockets
+      - ./.vscode-ext:/root/.vscode-server/extensions
+      - ./.vscode-insiders-ext:/root/.vscode-server-insiders/extensions        
     depends_on:
       - db
