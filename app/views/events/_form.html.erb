@@ -1,10 +1,10 @@
-<%= form_with(model: post) do |form| %>
-  <% if post.errors.any? %>
+<%= form_with(model: event) do |form| %>
+  <% if event.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this post from being saved:</h2>
 
       <ul>
-        <% post.errors.each do |error| %>
+        <% event.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -17,13 +17,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :body %>
-    <%= form.text_field :body %>
+    <%= form.label :date %>
+    <%= form.text_field :date %>
   </div>
 
   <div class="field">
-    <%= form.label :score %>
-    <%= form.number_field :score %>
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
   </div>
 
   <div class="actions">
