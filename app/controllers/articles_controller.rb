@@ -1,7 +1,11 @@
 class ArticlesController < ApplicationController
   
   def index
-    @name = "Biki"
+    @name = "Gonza"
+  end
+
+  def authors
+    @authors_list = ["Borges","Tolkien", "Biki" , "Gonza"]
   end
   def authors
     @authors_list = ["Borges", "Tolkien", "Biki", "Gonza"]
