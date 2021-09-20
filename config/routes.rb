@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
  
+  resources :scores
   resources :users
   resources :events
   resources :posts

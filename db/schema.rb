@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_13_224601) do
+ActiveRecord::Schema.define(version: 2021_09_20_224755) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
@@ -24,9 +24,18 @@ ActiveRecord::Schema.define(version: 2021_09_13_224601) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "body"
-    t.integer "score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "scores", force: :cascade do |t|
+    t.integer "post_id", null: false
+    t.integer "score"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_scores_on_post_id"
+    t.index ["user_id"], name: "index_scores_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,4 +47,6 @@ ActiveRecord::Schema.define(version: 2021_09_13_224601) do
   end
 
   add_foreign_key "events", "users"
+  add_foreign_key "scores", "posts"
+  add_foreign_key "scores", "users"
 end
