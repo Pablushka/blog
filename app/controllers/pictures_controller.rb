@@ -17,6 +17,7 @@ class PicturesController < ApplicationController
 
   # GET /pictures/1/edit
   def edit
+    @posts = Post.all
   end
 
   # POST /pictures or /pictures.json
