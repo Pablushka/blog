@@ -9,4 +9,6 @@ Model
     - score: integer
     - user_id : foreign key -> User
     
-    
+Picture 
+    - post_id: foreign key -> Post
+    - picture: string
