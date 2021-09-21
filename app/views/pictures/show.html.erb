@@ -7,8 +7,10 @@
 
 <p>
   <strong>Picture:</strong>
-  <%= @picture.picture %>
+  <%= image_tag(@picture.picture, height: '200') %>
 </p>
+
+<%= image_tag("https://images-ext-1.discordapp.net/external/sSVOPs8HafZbZwP1QWcwccG0fHsoMTJcG5XM4iouVwQ/https/http2.mlstatic.com/D_NQ_NP_2X_869597-MLA43210799889_082020-F.webp?width=292&height=338", height: '50')  %>
 
 <%= link_to 'Edit', edit_picture_path(@picture) %> |
 <%= link_to 'Back', pictures_path %>
