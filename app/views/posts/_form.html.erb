@@ -17,6 +17,17 @@
   </div>
 
   <div class="field">
+  <%= form.label "Score" %>
+  <select name='post[score]' id="post_score">
+  <%= options_for_select([["1 Caramelo",1],
+  ["2 Caramelos",2],["3 Caramelos",3],["4 Caramelos",4],
+  ["5 Caramelos",5]]) %>
+  </select> 
+  </div>
+
+ 
+
+  <div class="field">
     <%= form.label :body %>
     <%= form.text_field :body %>
   </div>

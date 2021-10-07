@@ -8,6 +8,7 @@
       <th>Title</th>
       <th>Body</th>
       <th>Cool Pic</th>
+      <th>Score</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,6 +23,7 @@
         <% else %>
         <td> No Pic </td> 
         <% end %>
+        <td><%= "🍬" * post.score.first.score  %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>

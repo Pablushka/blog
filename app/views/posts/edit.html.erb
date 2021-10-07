@@ -1,6 +1,12 @@
 <h1>Editing Post</h1>
 
-<%= render 'form', post: @post %>
+<!--
+Comentario httml:
+Comando render sirve para contenter en este archivo el contenido de otro archivo. 
+Es:  render + ["lo que quiero incuir"] , post/ pictures/ etc: @"variable publica".
+-->
+
+<%= render 'form', post: @post %> 
 
 <%= link_to 'Show', @post %> |
 <%= link_to 'Back', posts_path %>

@@ -19,6 +19,8 @@ class PostsController < ApplicationController
   def edit
    
   end
+ 
+
 
   # POST /posts or /posts.json
   def create
@@ -39,6 +41,16 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
+        score = Score.new
+        score.post_id = @post.id
+        score.user_id = 1 
+        score.score = params[:score]
+        puts @post.id
+        puts params[:score]
+        if !score.save
+          format.html { redirect_to @post, notice: "Score wasn't updated." }
+          format.json { render :show, status: :unprocessable_entity, location: @post }
+        end
         format.html { redirect_to @post, notice: "Post was successfully updated." }
         format.json { render :show, status: :ok, location: @post }
       else
@@ -65,6 +77,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :body , :score)
     end
 end

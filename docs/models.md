@@ -17,3 +17,6 @@
 
     - post_id: foreign key -> Post
     - picture: string
+
+## Tarea Restante
+    - Post edit no guarda los scores. No acepta Score como parametro válido.
