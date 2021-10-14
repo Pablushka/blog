@@ -40,13 +40,13 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
     respond_to do |format|
-      if @post.update(post_params)
-        score = Score.new
-        score.post_id = @post.id
-        score.user_id = 1 
-        score.score = params[:score]
-        puts @post.id
-        puts params[:score]
+      #byebug
+      score_points = post_params[:score]
+
+      if @post.update(post_params.slice(:title, :body))
+        score = Score.find_or_create_by(post_id: @post.id, user_id: 1)
+        score.score = score_points
+
         if !score.save
           format.html { redirect_to @post, notice: "Score wasn't updated." }
           format.json { render :show, status: :unprocessable_entity, location: @post }
